@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+	<title>The Home Doctors</title>
+	<style>
+		html {
+			height:100%;
+		}
+		body {
+			background-color:#FFFFFF;
+			margin:0;
+			height:100%;
+		}
+	</style>
+	<!-- copy these lines to your document head: -->
+
+	<meta name="viewport" content="user-scalable=yes, width=800" />
+	<link rel="stylesheet" type="text/css" href="index.hyperesources/bulma.css" />
+	<script type="text/javascript" src="index.hyperesources/howler.js"></script>
+	<script type="text/javascript" src="index.hyperesources/truthtable.js"></script>
+	<script type="text/javascript">
+		var current = null;
+		var correct_sound = new Howl({ src: ['index.hyperesources/ding.mp3'] });
+		var wrong_sound = new Howl({ src: ['index.hyperesources/buzzer.mp3'] });
+		var rain_sound = new Howl({ src: ['index.hyperesources/rain.mp3'], loop: true });
+		var click_sound = new Howl({ src: ['index.hyperesources/click.wav'] });
+		var applause_sound = new Howl({ src: ['index.hyperesources/applause.mp3'] });
+		
+		var VOLUME = 0.5;
+		var DURATION = 1000;
+		var current_music = null;
+		var current_id = null;
+		var show_music = new Howl({ src: ['index.hyperesources/bossa.mp3'], loop: true });
+		var tutorial_music = new Howl({ src: ['index.hyperesources/furious-freak.mp3'], loop: true });
+		var exercise_music = new Howl({ src: ['index.hyperesources/inspired.mp3'], loop: true });
+		
+		function switchMusic(music) {
+			if (current_music !== null) {
+				current_music.fade(VOLUME, 0.0, DURATION, current_id);
+				setTimeout(current_music.stop.bind(current_music), DURATION);
+				current_music = null;
+				current_id = null;
+			}
+			if (music !== null) {
+				current_music = music;
+				current_id = music.play();
+				music.fade(0.0, VOLUME, DURATION, current_id);
+			}
+		}
+	</script>
+
+	<!-- end copy -->
+  </head>
+  <body>
+	<!-- copy these lines to your document: -->
+
+	<div id="index_hype_container" style="margin:auto;position:relative;width:100%;height:100%;overflow:hidden;">
+		<script type="text/javascript" charset="utf-8" src="index.hyperesources/index_hype_generated_script.js?60373"></script>
+	</div>
+
+	<!-- end copy -->
+	
+
+
+	<!-- text content for search engines: -->
+
+	<div style="display:none" aria-hidden=true>
+
+		<div>Exercise 3</div>
+		<div>Tutorial</div>
+		<div>Exercise 2</div>
+		<div>Start Game</div>
+		<div>Closing</div>
+		<div>Credits</div>
+		<div>Scene Select</div>
+		<div>Exercise 1</div>
+		<div>Rain Sensor</div>
+		<div>Opening</div>
+		<div>Away Switch</div>
+		<div>Proceed ></div>
+		<div>Q</div>
+		<div>Check</div>
+		<div>INPUTS</div>
+		<div>0: Night</div>
+		<div>= Whether motion is detected
+     0: No motion detected, 1: Motion detected
+</div>
+		<div>A</div>
+		<div></div>
+		<div>= Whether it is night or day
+     0: Night, 1: Day
+</div>
+		<div>
+</div>
+		<div>= Whether the light is on
+    0: Light is off, 1: Light is on
+</div>
+		<div>OUTPUT</div>
+		<div>0: Light is off</div>
+		<div>Move your mouse over each row to see what the inputs represent.</div>
+		<div>0: No motion detected</div>
+		<div>1: Motion detected</div>
+		<div>1: Day</div>
+		<div>B</div>
+		<div>01</div>
+		<div>1: Light is on</div>
+		<div>1</div>
+		<div>01</div>
+		<div>0</div>
+		<div>Close</div>
+		<div>01</div>
+		<div>01</div>
+		<div>That’s correct! The light should stay off in the daytime even if motion is detected.</div>
+		<div>Awesome, you finished programming the light and motion sensor! Now, let’s see if Patty likes the new system...</div>
+		<div>= Whether the switch is on
+    0: Switch is off, 1: Switch is on
+</div>
+		<div>01</div>
+		<div>01</div>
+		<div>01</div>
+		<div>01</div>
+		<div>= Whether motion is detected
+    0: No motion detected, 1: Motion detected
+</div>
+		<div>1: Switch is on</div>
+		<div>C</div>
+		<div>= Whether it is night or day
+    0: Night, 1: Day
+</div>
+		<div>0: Switch is off</div>
+		<div>01</div>
+		<div>= Whether the light is on
+    0: Light is off, 1: Light is on
+</div>
+		<div>01</div>
+		<div>Great! You got the switch working with the motion sensor. Now, let’s get back to Patty... </div>
+		<div>01</div>
+		<div>01</div>
+		<div>0: Away from home</div>
+		<div>= Whether it is raining
+    0: Not raining, 1: Raining
+</div>
+		<div>01</div>
+		<div>1: Open</div>
+		<div>Fantastic! You finished programming the rain sensor and windows. Let’s show Patty our work...</div>
+		<div>= Whether the owner is at home
+    0: Away from home, 1: At home
+</div>
+		<div>01</div>
+		<div>1: At home</div>
+		<div>= Whether the windows are open
+   0: Closed, 1: Open
+</div>
+		<div>0: Closed</div>
+		<div>0: Not raining</div>
+		<div>01</div>
+		<div>1: Raining</div>
+		<div>01</div>
+		<div>Mr Gee: Hi everyone! Welcome to the Home Doctors, the show that looks at your home and makes it better.</div>
+		<div>Mr Gee: With me today is Patty. Patty, how can we help?</div>
+		<div>Patty: Thanks, Mr Gee! Well...</div>
+		<div>Patty: ...last week my husband came back late and it was so dark that he couldn’t find the light switch at the door.</div>
+		<div>Patty: Because of that, he tripped and fell.</div>
+		<div>Mr Gee: Oh dear.</div>
+		<div>Patty: After that happened, we installed a motion sensor that would switch on the light when it detects movement at night...</div>
+		<div>Patty: ...but I don’t think it’s programmed properly. The light comes on even when it's not needed.</div>
+		<div>Mr Gee: Don’t worry, Patty! Here, let the Home Doctors fix it for you.</div>
+		<div>That’s correct! No one is at the door, so the light is not needed.</div>
+		<div>As one of the Home Doctors, help Patty reprogram the motion sensor by choosing the correct outputs.</div>
+		<div>The inputs are described here. Each input can be either 0 or 1.</div>
+		<div>01</div>
+		<div>The output is described here. The output can be either 0 or 1.</div>
+		<div>Move your mouse over each row of the truth table to see what each set of inputs represents.</div>
+		<div>Use the dropdown menu to choose an output for each set of inputs.</div>
+		<div>For instance, in the first row, an output of 0 means that the light should be off when no motion is detected at night.</div>
+		<div>Click the Check button to see if your answer is correct. The message will also explain why your answer is correct or wrong.</div>
+		<div>This concludes the tutorial. Now, help Patty reprogram the motion sensor so the light turns on only when needed!</div>
+		<div>Sometime later...</div>
+		<div>Mr Gee: All done! How do you like it, Patty?</div>
+		<div>Patty: Thanks, Mr. Gee! The light doesn’t turn on during the day anymore.</div>
+		<div>Patty: However, we’ve noticed a new problem.</div>
+		<div>Mr Gee: What is it?</div>
+		<div>Patty: Sometimes, when it’s cloudy during the day, I may want to switch on the light.</div>
+		<div>Patty: However, the old light switch doesn’t work anymore.</div>
+		<div>Mr Gee: What do you want the old light switch to do?</div>
+		<div>Patty: I want the light to be on when the switch is on.</div>
+		<div>Patty: Otherwise, the light should behave the way it does now.</div>
+		<div>Mr Gee: No problem, Patty, the Home Doctors are on it!</div>
+		<div>Next ></div>
+		<div>Patty: Very impressive, Mr. Gee! The door light works perfectly now. Is there anything else we can automate?</div>
+		<div>Mr Gee: Well, we could automate the windows so they close automatically when it rains!</div>
+		<div>Mr Gee: All you need is a rain sensor and motors for your windows. We can program the windows to close when it rains and open when the rain stops.</div>
+		<div>Patty: Hmm, I don’t want my windows to be open all the time though.</div>
+		<div>Patty: Is it possible to add an Away switch so that the windows are always closed when I’m not at home?</div>
+		<div>Mr Gee: Of course! The Home Doctors are on it.</div>
+		<div>Patty: Mr. Gee, this is fantastic! I’ll never have to worry about opening and closing the windows at home again.</div>
+		<div>Patty: Thank you so much, Home Doctors!</div>
+		<div>Mr Gee: Proud to be of service, Patty. And don't forget to join me next week for another exciting episode of the Home Doctors!</div>
+		<div>Acknowledgements
+"Bossa Antigua"
+Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/
+
+"Furious Freak"Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0
+
+"Inspired"Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0
+
+"swosh.aif"man (freesound.org)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0
+
+</div>
+
+	</div>
+
+	<!-- end text content: -->
+
+  </body>
+</html>
